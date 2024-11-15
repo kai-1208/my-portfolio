@@ -4,12 +4,12 @@
 }
 
 body {
-    background: linear-gradient(45deg, #6dff7e, rgb(90, 90, 255));
+    background-color: white;
     font-family: 'Santello', cursive;
 }
 
 header {
-    background: rgba(255, 255, 255, 0.7);
+    background-color: #1024ff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     display: flex;
@@ -21,8 +21,7 @@ header {
 
 header h1 {
     font-size: 30px;
-    color: black;
-    
+    color: white;
 }
 
 nav {
@@ -162,6 +161,13 @@ main {
     }
 }
 
+footer {
+    background-color: #3C3CFF;
+    padding: 30px;
+    color: white;
+    border-radius: 5px;
+}
+
 .flex-container {
     display: flex;
     justify-content: center;
@@ -181,6 +187,23 @@ main {
 }
 
 .black-link:hover {
-    color: rgb(60, 60, 255);
+    color: #3C3CFF;
+    font-size: 110%;
+}
+
+.white-link {
+    color: white;
+    text-decoration: none;
+    font-size: 100%;
+    transition: color 0.3s ease;
+    transition: font-size 0.3s ease;
+}
+
+.white-link:visited {
+    color: white;
+}
+
+.white-link:hover {
+    color: #ffa56e;
     font-size: 110%;
 }
