@@ -23,4 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
     pageTitle.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+    const scrollButton = document.getElementById("scrollToTop");
+    function toggleScrollTop() {
+        if (window.scrollY > 100) {
+            scrollButton.classList.add("show");
+            scrollButton.classList.remove("hide");
+        } else {
+            scrollButton.classList.add("hide");
+            scrollButton.classList.remove("show");
+        }
+    }
+
+    window.addEventListener("scroll", toggleScrollTop);
 });
