@@ -36,4 +36,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.addEventListener("scroll", toggleScrollTop);
+    toggleScrollTop();
 });
