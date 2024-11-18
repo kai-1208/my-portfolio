@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgb(202, 248, 255);
+    background-color: white;
     font-family: 'Santello', cursive;
 }
 
@@ -16,7 +16,8 @@ header {
     position: sticky;
     padding: 10px;
     top: 0;
-    z-index: 1000;
+    z-index: 100000;
+
     #page-title {
         display: flex;
     }
@@ -91,6 +92,15 @@ main {
     }
 
     #Profile {
+        .flex-container {
+            width: 600px;
+            margin: 0 auto;
+            border: 1px solid #0000001b;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
         button {
             background: none;
             border: none;
@@ -173,26 +183,54 @@ main {
             padding: 20px;
             border: 1px solid #0000001b;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 255, 255, 0.1);
+            background: white;
+            transition: transform 0.3s ease;
             img {
                 width: 250px;
                 border-radius: 5px;
             }
         }
+
+        .work-item:hover {
+            transform: scale(1.1);
+            z-index: 1000;
+        }
     }
     #Skill {
-        .flex-container div{
+        .flex-container div {
             border: 1px solid #0000001b;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: rgba(255, 255, 255, 0.1);
+            background: white;
+            transition: transform 0.3s ease;
         }
+
+        .flex-container div:hover {
+            transform: scale(1.1);
+            z-index: 1000;
+        }
+
         img {
             height: 100px;
             padding: 20px;
         }
     }
     #Contact {
+        .flex-container div {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #0000001b;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+            transition: transform 0.3s ease;
+        }
+
+        .flex-container div:hover {
+            transform: scale(1.1);
+            z-index: 1000;
+        }
+
         img {
             width: 75px;
             height: 75px;
@@ -202,8 +240,9 @@ main {
 }
 
 footer {
-    background-color: #3C3CFF;
+    background-color: #1024ff;
     padding: 30px;
+    text-align: center;
     color: white;
     border-radius: 5px;
 }
@@ -217,9 +256,7 @@ footer {
 .black-link {
     color: black;
     text-decoration: none;
-    font-size: 100%;
     transition: color 0.3s ease;
-    transition: font-size 0.3s ease;
 }
 
 .black-link:visited {
@@ -227,8 +264,7 @@ footer {
 }
 
 .black-link:hover {
-    color: #3C3CFF;
-    font-size: 110%;
+    color: #1024ff;
 }
 
 .white-link {
