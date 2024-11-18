@@ -6,12 +6,13 @@
 body {
     background-color: white;
     font-family: 'Santello', cursive;
+    margin: 0;
 }
 
 header {
     background-color: #1024ff;
+    border: 1px solid #0000001b;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
     display: flex;
     position: sticky;
     padding: 10px;
@@ -198,7 +199,9 @@ main {
 
 footer {
     background-color: #1024ff;
-    padding: 20px;
+    border: 1px solid #0000001b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
     text-align: center;
     color: white;
 }
