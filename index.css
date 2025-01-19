@@ -151,6 +151,26 @@ main {
             transform: scale(1.1);
             z-index: 1000;
         }
+
+        .large-work-item {
+            width: 980px;
+            height: 600px;
+            border-radius: 5px;
+            padding: 20px;
+            border: 1px solid #0000001b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: white;
+            transition: transform 0.3s ease;
+            img {
+                width: 250px;
+                border-radius: 5px;
+            }
+        }
+
+        .large-work-item:hover {
+            transform: scale(1.1);
+            z-index: 1000;
+        }
     }
     #Skill {
         .flex-container div {
