@@ -164,6 +164,9 @@ main {
                 width: 250px;
                 border-radius: 5px;
             }
+            p {
+                text-align: left;
+            }
         }
 
         .large-work-item:hover {
