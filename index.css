@@ -1,3 +1,6 @@
+/* ===================================
+   基本設定 & フォント
+   =================================== */
 @font-face {
     font-family: 'Santello';
     src: url('fonts/SANTELLO.ttf') format('truetype');
@@ -5,25 +8,31 @@
 
 body {
     background-color: white;
-    font-family: 'Santello', cursive;
+    font-family: 'Noto Sans JP', sans-serif;
     margin: 0;
 }
 
+/* ===================================
+   ヘッダー
+   =================================== */
 header {
-    background-color: #1024ff;
-    border: 1px solid #0000001b;
+    background-color: #3A50A0; /* 色彩計画の改善を適用 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     position: sticky;
-    padding: 10px;
+    padding: 10px 20px; /* 横のpaddingも追加 */
     top: 0;
-    z-index: 100000;
+    z-index: 10000;
+    align-items: center;
 }
 
 header h1 {
     font-size: 30px;
     color: white;
     text-decoration: none;
+    font-family: 'Santello', cursive;
+    margin: 0;
 }
 
 nav {
@@ -32,212 +41,225 @@ nav {
 }
 
 nav a {
-    padding: 30px;
+    padding: 20px; /* 少しpaddingを調整 */
     font-size: 20px;
 }
 
-main {
-    section {
-        text-align: center;
-        padding-top: 100px;
-        margin-top: -100px;
-    }
-
-    h2 {
-        font-size: 35px;
-    }
-
-    #Profile {
-        .flex-container {
-            width: 600px;
-            margin: 0 auto;
-            border: 1px solid #0000001b;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: white;
-        }
-
-        button {
-            background: none;
-            border: none;
-        }
-
-        #otete {
-            width: 170px;
-            border-radius: 50%;
-        }
-
-        #oteteButton {
-            position: relative;
-            display: inline-block;
-            margin-right: 50px;
-        }
-
-        #oteteButton.show #fingers {
-            visibility: visible;
-        }
-
-        #fingers {
-            visibility: hidden;
-            position: absolute;
-            background-color: #333;
-            color: #fff;
-            padding: 5px;
-            font-size: 15px;
-            white-space: nowrap;
-            border-radius: 15px;
-            transform: translateX(-150px);
-        }
-
-        #fingers div {
-            position: absolute;
-            background-color: #333;
-            border-radius: 50%;
-        }
-
-        #circle1 {
-            width: 12px;
-            height: 12px;
-            transform: translateX(135px) translateY(-35px);
-        }
-
-        #circle2 {
-            width: 16px;
-            height: 16px;
-            transform: translateX(110px) translateY(-25px);
-        }
-
-        table {
-            display: table;
-        }
-
-        tbody {
-            display: table-row-group;
-        }
-
-        tr {
-            display: table-row;
-        }
-
-        th {
-            display: table-cell;
-            padding: 10px;
-            text-align: left;
-        }
-
-        td {
-            display: table-cell;
-            padding: 10px;
-            text-align: left;
-        }
-    }
-    #Works {
-        .work-item {
-            width: 300px;
-            height: 300px;
-            border-radius: 5px;
-            padding: 20px;
-            border: 1px solid #0000001b;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: white;
-            transition: transform 0.3s ease;
-            img {
-                width: 250px;
-                border-radius: 5px;
-            }
-        }
-
-        .work-item:hover {
-            transform: scale(1.1);
-            z-index: 1000;
-        }
-
-        .large-work-item {
-            width: 980px;
-            border-radius: 5px;
-            padding: 20px;
-            border: 1px solid #0000001b;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: white;
-            transition: transform 0.3s ease;
-            img {
-                width: 250px;
-                border-radius: 5px;
-            }
-            p {
-                text-align: left;
-            }
-        }
-
-        .large-work-item:hover {
-            transform: scale(1.1);
-            z-index: 1000;
-        }
-    }
-    #Skill {
-        .flex-container div {
-            width: 220px;
-            height: 220px;
-            border: 1px solid #0000001b;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: white;
-            transition: transform 0.3s ease;
-        }
-
-        .flex-container div:hover {
-            transform: scale(1.1);
-            z-index: 1000;
-        }
-
-        img {
-            height: 100px;
-            padding: 20px;
-        }
-    }
-    #Contact {
-        .flex-container div {
-            width: 150px;
-            height: 150px;
-            border: 1px solid #0000001b;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: white;
-            transition: transform 0.3s ease;
-        }
-
-        .flex-container div:hover {
-            transform: scale(1.1);
-            z-index: 1000;
-        }
-
-        img {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-        }
-    }
+/* ===================================
+   メインコンテンツ共通
+   =================================== */
+main section {
+    text-align: center;
+    padding-top: 100px;
+    margin-top: -100px;
 }
 
-footer {
-    background-color: #1024ff;
-    border: 1px solid #0000001b;
+main h2 {
+    font-size: 35px;
+    font-family: 'Santello', cursive;
+}
+
+/* ===================================
+   プロフィール (#Profile)
+   =================================== */
+#Profile .flex-container {
+    width: 600px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 20px; /* 内側の余白を追加 */
+}
+
+#Profile button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#Profile #otete {
+    width: 170px;
+    border-radius: 50%;
+}
+
+#Profile #oteteButton {
+    position: relative;
+    display: inline-block;
+    margin-right: 50px;
+}
+
+#Profile #oteteButton.show #fingers {
+    visibility: visible;
+    opacity: 1;
+}
+
+#Profile #fingers {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px; /* 吹き出しの余白を調整 */
+    font-size: 15px;
+    white-space: nowrap;
+    border-radius: 15px;
+    transform: translateX(-150px);
+    transition: visibility 0.2s, opacity 0.2s ease;
+}
+
+#Profile #fingers div {
+    position: absolute;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+#Profile #circle1 {
+    width: 12px;
+    height: 12px;
+    transform: translateX(135px) translateY(-35px);
+}
+
+#Profile #circle2 {
+    width: 16px;
+    height: 16px;
+    transform: translateX(110px) translateY(-25px);
+}
+
+#Profile table {
+    display: table;
+}
+
+#Profile tbody {
+    display: table-row-group;
+}
+
+#Profile tr {
+    display: table-row;
+}
+
+#Profile th, #Profile td {
+    display: table-cell;
     padding: 10px;
+    text-align: left;
+}
+
+/* ===================================
+   制作物 (#Works)
+   =================================== */
+#Works .work-item,
+#Works .large-work-item {
+    border-radius: 5px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    /* transitionにbox-shadowも追加 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 15px;
+}
+
+#Works .work-item {
+    width: 300px;
+    height: 300px;
+}
+
+#Works .large-work-item {
+    width: 980px;
+}
+
+#Works .work-item img {
+    width: 250px;
+    border-radius: 5px;
+}
+
+#Works .large-work-item img {
+    width: 250px;
+    border-radius: 5px;
+}
+
+#Works .large-work-item p {
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* ===================================
+   スキル (#Skill)
+   =================================== */
+#Skill .flex-container div {
+    width: 220px;
+    height: 220px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    /* transitionにbox-shadowも追加 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 15px;
+}
+
+#Skill img {
+    height: 100px;
+    padding: 20px;
+}
+
+/* ===================================
+   コンタクト (#Contact)
+   =================================== */
+#Contact .flex-container div {
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    /* transitionにbox-shadowも追加 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 15px;
+}
+
+#Contact img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+/* ★ホバーエフェクトの改善を適用★ */
+#Works .work-item:hover,
+#Works .large-work-item:hover,
+#Skill .flex-container div:hover,
+#Contact .flex-container div:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+}
+
+/* ===================================
+   フッター
+   =================================== */
+footer {
+    background-color: #3A50A0; /* 色彩計画の改善を適用 */
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
     text-align: center;
     color: white;
 }
 
+/* ===================================
+   固定要素 (ページトップボタン)
+   =================================== */
 #page-title {
-    z-index: 100000;
+    z-index: 1000;
     bottom: 50px;
     right: 20px;
     position: fixed;
     display: flex;
-    img {
-        width: 100px;
-        height: 100px;
-    }
+    cursor: pointer;
+}
+
+#page-title img {
+    width: 100px;
+    height: 100px;
 }
 
 #scrollToTop {
@@ -249,16 +271,17 @@ footer {
     font-size: 15px;
     white-space: nowrap;
     border-radius: 15px;
-    transform: translateX(0px)translateY(80px);
+    transform: translateX(0px) translateY(80px);
     transition: visibility 0.3s, opacity 0.3s;
-    #triangle {
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 10px solid #ffa56e;
-        transform: translateX(90px)translateY(15px);
-    }
+}
+
+#scrollToTop #triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #ffa56e;
+    transform: translateX(90px) translateY(15px);
 }
 
 #scrollToTop.show {
@@ -271,6 +294,9 @@ footer {
     opacity: 0;
 }
 
+/* ===================================
+   汎用クラス
+   =================================== */
 .flex-container {
     display: flex;
     justify-content: center;
@@ -289,23 +315,89 @@ footer {
 }
 
 .black-link:hover {
-    color: #1024ff;
+    color: #4A69E2; /* 色彩計画の改善を適用 */
 }
 
 .white-link {
     color: white;
     text-decoration: none;
-    font-size: 100%;
-    transition: color 0.3s ease;
-    transition: font-size 0.3s, padding 0.3s ease;
+    display: inline-block; /* transformを有効にするため */
+    /* ★ホバーエフェクトの改善を適用★ */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .white-link:visited {
     color: white;
 }
 
+/* ★ホバーエフェクトの改善を適用★ */
 .white-link:hover {
     color: #ffa56e;
-    font-size: 110%;
-    padding: 25px;
+    transform: scale(1.1);
+}
+
+/* ===================================
+   レスポンシブ対応
+   =================================== */
+@media screen and (max-width: 768px) {
+    /* ヘッダーの調整 */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        margin-left: 0;
+        padding-top: 10px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    /* メインコンテンツの幅を調整 */
+    main section {
+        padding-top: 130px; /* ヘッダーの高さが変わったので調整 */
+        margin-top: -130px;
+    }
+
+    #Profile .flex-container {
+        width: 90%;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    #Profile #oteteButton {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Worksのアイテムを縦積みに */
+    #Works .work-item,
+    #Works .large-work-item {
+        width: 90%;
+        height: auto;
+        margin: 15px 0;
+    }
+
+    #Works .work-item img,
+    #Works .large-work-item img {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    /* SkillとContactのアイテム */
+    #Skill .flex-container div,
+    #Contact .flex-container div {
+        width: 40%;
+        height: auto;
+        margin: 5px;
+    }
+
+    /* 右下の固定画像を少し小さく */
+    #page-title img {
+        width: 80px;
+        height: 80px;
+    }
 }
