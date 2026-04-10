@@ -8,11 +8,11 @@
     <link rel="icon" href="img/otete-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
+    <header class="container">
         <h1>Takahashi's Portfolio</h1>
         <nav>
             <a href="#Profile" class="white-link">Profile</a>
@@ -22,7 +22,7 @@
         </nav>
     </header>
     <main>
-        <section id="Profile">
+        <section id="Profile" class="container">
             <h2>Profile</h2>
             <div class="flex-container">
                 <div id="oteteButton">
@@ -62,7 +62,7 @@
                 <br>クラブはろぼっと倶楽部に所属し、ロボットの制御を務めています。
             </p>
         </section>
-        <section id="Works">
+        <section id="Works" class="container">
             <h2>Works</h2>
             <p>画像を押すと、githubのレポジトリに飛びます。</p>
             <div class="flex-container">
@@ -87,45 +87,49 @@
                     </a>
                 </div>
                 <div class="large-work-item">
-                    <a href="https://github.com/kai-1208/otetekart_in_python" class="black-link">
+                    <div class="work-content">
+                        <p>
+                            <span class="mono-label">制作時期:</span> 2024年12月~2025年1月<br>
+                            <span class="mono-label">制作時間:</span> 25時間<br>
+                            <span class="mono-label">タイトル:</span> おててカート<br>
+                            <span class="mono-label">概要:</span> おててカートは、おてての形をしたキャラクターを操作し、コースを走り抜けるタイムアタック型のmode7のレーシングゲームです。
+                            プレイヤーは、性能の異なる4種類のおてての中から1体を選び、4つのコースの中から1つを選んでタイムアタックを行います。
+                            ゲームの特徴として、おてての性能にはスピード、加速、ハンドリングの3つのパラメータがあり、それぞれ異なる特性を駆使して最速タイムを目指します。
+                            1つのコースは3周で構成されており、各ラップのタイムを計測しながらゴールを目指します。
+                            ゴール後には、最終的なタイムが表示されます。
+                            また、タイムアタック中はポーズ画面を開くことができ、ポーズ画面からリトライしたり、タイトル画面に戻ったりすることも可能です。
+                            おててカートでは、Numbaを用いた高速化により、安定したフレームレートを実現しています。
+                            シンプルな操作性とデザインにもこだわり、幅広いプレイヤーが楽しめるゲームにしました。
+                            ぜひ、最速タイムを目指してプレイしてみてください！
+                        </p>
+                    </div>
+                    <a href="https://github.com/kai-1208/otetekart_in_python" class="black-link work-images">
                         <img src="img/otetekart1.png" alt="oteteKart">
                         <img src="img/otetekart2.png" alt="oteteKart">
                         <img src="img/otetekart3.png" alt="oteteKart">
                         <img src="img/otetekart4.png" alt="oteteKart">
                         <img src="img/otetekart5.png" alt="oteteKart">
                     </a>
-                    <p>
-                        <br>制作時期 : 2024年12月~2025年1月
-                        <br>制作時間 : 25時間
-                        <br>タイトル : おててカート
-                        <br>概要 : おててカートは、おてての形をしたキャラクターを操作し、コースを走り抜けるタイムアタック型のmode7のレーシングゲームです。
-                        プレイヤーは、性能の異なる4種類のおてての中から1体を選び、4つのコースの中から1つを選んでタイムアタックを行います。
-                        ゲームの特徴として、おてての性能にはスピード、加速、ハンドリングの3つのパラメータがあり、それぞれ異なる特性を駆使して最速タイムを目指します。
-                        1つのコースは3周で構成されており、各ラップのタイムを計測しながらゴールを目指します。
-                        ゴール後には、最終的なタイムが表示されます。
-                        また、タイムアタック中はポーズ画面を開くことができ、ポーズ画面からリトライしたり、タイトル画面に戻ったりすることも可能です。
-                        おててカートでは、Numbaを用いた高速化により、安定したフレームレートを実現しています。
-                        シンプルな操作性とデザインにもこだわり、幅広いプレイヤーが楽しめるゲームにしました。
-                        ぜひ、最速タイムを目指してプレイしてみてください！
-                    </p>
                 </div>
                 <div class="large-work-item">
-                    <a href="https://github.com/kai-1208/cps-counter" class="black-link">
+                    <div class="work-content">
+                        <p>
+                            <span class="mono-label">制作時期:</span> 2025年2月<br>
+                            <span class="mono-label">制作時間:</span> 11時間<br>
+                            <span class="mono-label">タイトル:</span> Cps Counter<br>
+                            <span class="mono-label">概要:</span> Cps Counterは、CPS(Click per Second)を測定するためのGUIアプリケーションです。
+                            ユーザーは計測時間を設定し、画面をクリックすることでCPSをリアルタイムで計測します。
+                            測定中は、平均CPSと最大CPSが表示され、クリックごとに波紋エフェクトが表示されます。
+                            また、ユーザーはRGBカラースライダーを使用して波形エフェクトの色を自由に変更できます。
+                            測定終了後、総クリック数、平均CPS、最大CPSの結果が表示され、CPSの推移のグラフも確認できます。
+                            また、再測定が可能になっており、このアプリは3つの画面(設定画面、測定画面、結果画面)を切り替えながら動作します。
+                        </p>
+                    </div>
+                    <a href="https://github.com/kai-1208/cps-counter" class="black-link work-images">
                         <img src="img/cps1.png" alt="CPS Counter">
                         <img src="img/cps2.png" alt="CPS Counter">
                         <img src="img/cps3.png" alt="CPS Counter">
                     </a>
-                    <p>
-                        <br>制作時期 : 2025年2月
-                        <br>制作時間 : 11時間
-                        <br>タイトル : Cps Counter
-                        <br>概要 : Cps Counterは、CPS(Click per Second)を測定するためのGUIアプリケーションです。
-                        ユーザーは計測時間を設定し、画面をクリックすることでCPSをリアルタイムで計測します。
-                        測定中は、平均CPSと最大CPSが表示され、クリックごとに波紋エフェクトが表示されます。
-                        また、ユーザーはRGBカラースライダーを使用して波形エフェクトの色を自由に変更できます。
-                        測定終了後、総クリック数、平均CPS、最大CPSの結果が表示され、CPSの推移のグラフも確認できます。
-                        また、再測定が可能になっており、このアプリは3つの画面(設定画面、測定画面、結果画面)を切り替えながら動作します。
-                    </p>
                 </div>
                 <!-- <div class="work-item">
                     <a href="">
@@ -137,8 +141,9 @@
                 </div> -->
             </div>
         </section>
-        <section id="Skill">
+        <section id="Skill" class="container">
             <h2>Skill</h2>
+            <div class="skills-grid">
             <div class="box-container">
                 <h3>Language</h3>
                 <div class="flex-container">
@@ -183,7 +188,7 @@
             </div>
             </div>
         </section>
-        <section id="Contact">
+        <section id="Contact" class="container">
             <h2>Contact</h2>
             <div class="flex-container">
                 <div>
