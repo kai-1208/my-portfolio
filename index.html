@@ -67,23 +67,13 @@
             <p>画像を押すと、githubのレポジトリに飛びます。</p>
             <div class="flex-container">
                 <div class="work-item">
-                    <a href="https://colab.research.google.com/drive/1UrtXRd3z163arRDDdf2cJTwrUwnJOi1z?usp=sharing"
-                        class="black-link">
-                        <img src="img/work2.png" alt="work2">
-                        <p>プログラミングの授業の課題2</p>
-                    </a>
-                </div>
-                <div class="work-item">
-                    <a href="https://colab.research.google.com/drive/1zGP0qLqOIPihmXUG8uQ1TXHHSwaiqPrx?usp=sharing"
-                        class="black-link">
-                        <img src="img/work4.png" alt="work4">
-                        <p>プログラミングの授業の課題4</p>
-                    </a>
-                </div>
-                <div class="work-item">
-                    <a href="https://github.com/pinattutaro/Must" class="black-link">
-                        <img src="img/kosensai2024.png" alt="kosensai2024">
-                        <p>2024年の高専祭の展示物</p>
+                    <img src="img/kosensai2024.png" alt="kosensai2024">
+                    <p>2024年の高専祭の展示物</p>
+                    <a href="https://github.com/pinattutaro/Must" class="repo-link" target="_blank">
+                        <svg class="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24" width="16" height="16">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                        VIEW REPOSITORY
                     </a>
                 </div>
                 <div class="large-work-item">
@@ -92,24 +82,38 @@
                             <span class="mono-label">制作時期:</span> 2024年12月~2025年1月<br>
                             <span class="mono-label">制作時間:</span> 25時間<br>
                             <span class="mono-label">タイトル:</span> おててカート<br>
-                            <span class="mono-label">概要:</span> おててカートは、おてての形をしたキャラクターを操作し、コースを走り抜けるタイムアタック型のmode7のレーシングゲームです。
-                            プレイヤーは、性能の異なる4種類のおてての中から1体を選び、4つのコースの中から1つを選んでタイムアタックを行います。
-                            ゲームの特徴として、おてての性能にはスピード、加速、ハンドリングの3つのパラメータがあり、それぞれ異なる特性を駆使して最速タイムを目指します。
-                            1つのコースは3周で構成されており、各ラップのタイムを計測しながらゴールを目指します。
-                            ゴール後には、最終的なタイムが表示されます。
-                            また、タイムアタック中はポーズ画面を開くことができ、ポーズ画面からリトライしたり、タイトル画面に戻ったりすることも可能です。
-                            おててカートでは、Numbaを用いた高速化により、安定したフレームレートを実現しています。
-                            シンプルな操作性とデザインにもこだわり、幅広いプレイヤーが楽しめるゲームにしました。
-                            ぜひ、最速タイムを目指してプレイしてみてください！
+                            <span class="mono-label">概要:</span> Pythonを用いた擬似3D（Mode7）レーシングゲーム。プレイヤーは異なる性能を持つ4種類のキャラクターから選択し、4つのコースでタイムアタックを行う。NumbaによるJITコンパイルを用いてPython特有の実行速度の課題を克服し、リアルタイムでの安定したフレームレートを達成した。
                         </p>
+                        
+                        <details class="tech-details">
+                            <summary>▶ 技術的な詳細 (View Technical Details)</summary>
+                            <div class="details-content">
+                                <ul>
+                                    <li><strong>課題とアプローチ:</strong> Pythonのネイティブ実行では描画ループのオーバーヘッドが大きく、スムーズなMode7描画（遠近感のある透視投影）が困難であった。これを解決するため、Numbaを導入。</li>
+                                    <li><strong>実装技術:</strong> 計算負荷の高いピクセル単位のテクスチャマッピング処理をNumbaによるJITコンパイルで最適化。行列演算と配列アクセスのボトルネックを解消した。</li>
+                                    <li><strong>アーキテクチャ・設計:</strong> ゲームステート管理（プレイ、ポーズ、リザルト）を明確に分離したステートマシンとして実装しており、将来の拡張を見据えた設計としている。</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <a href="https://github.com/kai-1208/otetekart_in_python" class="repo-link" target="_blank">
+                            <svg class="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24" width="16" height="16">
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                            VIEW REPOSITORY
+                        </a>
                     </div>
-                    <a href="https://github.com/kai-1208/otetekart_in_python" class="black-link work-images">
-                        <img src="img/otetekart1.png" alt="oteteKart">
-                        <img src="img/otetekart2.png" alt="oteteKart">
-                        <img src="img/otetekart3.png" alt="oteteKart">
-                        <img src="img/otetekart4.png" alt="oteteKart">
-                        <img src="img/otetekart5.png" alt="oteteKart">
-                    </a>
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <img src="img/otetekart1.png" alt="oteteKart" class="carousel-slide active">
+                            <img src="img/otetekart2.png" alt="oteteKart" class="carousel-slide">
+                            <img src="img/otetekart3.png" alt="oteteKart" class="carousel-slide">
+                            <img src="img/otetekart4.png" alt="oteteKart" class="carousel-slide">
+                            <img src="img/otetekart5.png" alt="oteteKart" class="carousel-slide">
+                        </div>
+                        <button class="carousel-btn prev">&#10094;</button>
+                        <button class="carousel-btn next">&#10095;</button>
+                    </div>
                 </div>
                 <div class="large-work-item">
                     <div class="work-content">
@@ -117,19 +121,36 @@
                             <span class="mono-label">制作時期:</span> 2025年2月<br>
                             <span class="mono-label">制作時間:</span> 11時間<br>
                             <span class="mono-label">タイトル:</span> Cps Counter<br>
-                            <span class="mono-label">概要:</span> Cps Counterは、CPS(Click per Second)を測定するためのGUIアプリケーションです。
-                            ユーザーは計測時間を設定し、画面をクリックすることでCPSをリアルタイムで計測します。
-                            測定中は、平均CPSと最大CPSが表示され、クリックごとに波紋エフェクトが表示されます。
-                            また、ユーザーはRGBカラースライダーを使用して波形エフェクトの色を自由に変更できます。
-                            測定終了後、総クリック数、平均CPS、最大CPSの結果が表示され、CPSの推移のグラフも確認できます。
-                            また、再測定が可能になっており、このアプリは3つの画面(設定画面、測定画面、結果画面)を切り替えながら動作します。
+                            <span class="mono-label">概要:</span> マウスクリックの秒間回数（CPS: Click Per Second）を計測・可視化するGUIアプリケーション。結果のグラフ化機能、波紋エフェクトなどの視覚的フィードバックを提供し、一連のプレイサイクル（設定・計測・結果）をシームレスに連携させた。
                         </p>
+
+                        <details class="tech-details">
+                            <summary>▶ 技術的な詳細 (View Technical Details)</summary>
+                            <div class="details-content">
+                                <ul>
+                                    <li><strong>アーキテクチャ設計:</strong> 状態遷移（設定画面・計測画面・結果画面）を明確に管理し、再測定時でもデータやメモリ上に不整合が生じないよう配慮した設計。</li>
+                                    <li><strong>UI/UXの実装:</strong> 計測ごとのリアルタイムな波紋エフェクト描画プロセスをスレッドセーフに処理するよう工夫。また、RGBカラースライダーによるカスタマイズ機能を追加し、インタラクティブ性を向上させた。</li>
+                                    <li><strong>データ処理:</strong> クリック時のタイムスタンプをリアルタイムで記録・集計。計測終了時には、ライブラリを用いてCPS推移のグラフを動的に生成・提示する構造とした。</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <a href="https://github.com/kai-1208/cps-counter" class="repo-link" target="_blank">
+                            <svg class="w-4 h-4 mr-2 fill-current" viewBox="0 0 24 24" width="16" height="16">
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                            VIEW REPOSITORY
+                        </a>
                     </div>
-                    <a href="https://github.com/kai-1208/cps-counter" class="black-link work-images">
-                        <img src="img/cps1.png" alt="CPS Counter">
-                        <img src="img/cps2.png" alt="CPS Counter">
-                        <img src="img/cps3.png" alt="CPS Counter">
-                    </a>
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <img src="img/cps1.png" alt="CPS Counter" class="carousel-slide active">
+                            <img src="img/cps2.png" alt="CPS Counter" class="carousel-slide">
+                            <img src="img/cps3.png" alt="CPS Counter" class="carousel-slide">
+                        </div>
+                        <button class="carousel-btn prev">&#10094;</button>
+                        <button class="carousel-btn next">&#10095;</button>
+                    </div>
                 </div>
                 <!-- <div class="work-item">
                     <a href="">
