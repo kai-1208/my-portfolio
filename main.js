@@ -48,7 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
             let currentIndex = 0;
             let slideInterval;
 
-            if (slides.length === 0) return;
+            if (slides.length <= 1) {
+                if (nextBtn) nextBtn.style.display = 'none';
+                if (prevBtn) prevBtn.style.display = 'none';
+                return;
+            }
 
             function showSlide(index) {
                 slides.forEach((slide, i) => {
