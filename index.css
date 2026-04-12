@@ -248,6 +248,15 @@ main h2 {
     justify-content: center;
 }
 
+.large-work-item .work-title {
+    font-size: 26px;
+    color: var(--text-main);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+}
+
 .large-work-item .work-content p {
     text-align: left;
     color: var(--text-sub);
