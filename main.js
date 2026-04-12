@@ -16,8 +16,10 @@ function calculateAge(birthday) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const ageElement = document.getElementById("age");
-    const birthday = "2007-12-08";
-    ageElement.textContent = calculateAge(birthday) + "歳";
+    if (ageElement) {
+        const birthday = "2007-12-08";
+        ageElement.textContent = calculateAge(birthday) + "歳";
+    }
 
     const pageTitle = document.getElementById("page-title");
     pageTitle.addEventListener("click", () => {
