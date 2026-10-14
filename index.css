@@ -93,6 +93,10 @@ main section {
     padding-bottom: 80px;
 }
 
+main section + section {
+    border-top: 1px solid var(--border);
+}
+
 main h2 {
     font-size: 32px;
     font-family: 'Santello', 'Inter', 'Noto Sans JP', sans-serif;
