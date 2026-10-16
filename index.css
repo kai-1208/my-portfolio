@@ -559,10 +559,12 @@ footer p {
    =================================== */
 #page-title {
     z-index: 1000;
-    bottom: 30px;
-    right: 30px;
+    bottom: 0;
+    left: 0;
     position: fixed;
     display: flex;
+    width: 90px;
+    height: 90px;
     cursor: pointer;
     opacity: 0.7;
     transition: opacity 0.3s ease;
@@ -575,6 +577,7 @@ footer p {
 #page-title img#oteteKart {
     width: 90px;
     height: 90px;
+    image-rendering: pixelated;
 }
 
 #scrollToTop {
@@ -588,7 +591,9 @@ footer p {
     font-family: 'Santello', 'Inter', 'Noto Sans JP', sans-serif;
     white-space: nowrap;
     border-radius: 4px;
-    transform: translateX(-120px) translateY(15px);
+    left: 0;
+    bottom: 100%;
+    transform: translateY(30px);
     transition: visibility 0.3s, opacity 0.3s;
 }
 

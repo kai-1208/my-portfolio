@@ -26,6 +26,40 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
+    const oteteKart = document.getElementById("oteteKart");
+    let previousScrollY = window.scrollY;
+    let scrollDirection = 1;
+    let kartPositionUpdatePending = false;
+
+    function updateKartPosition() {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollProgress = maxScroll > 0
+            ? Math.min(Math.max(window.scrollY / maxScroll, 0), 1)
+            : 0;
+        const maxTravel = Math.max(0, window.innerWidth - pageTitle.offsetWidth);
+
+        pageTitle.style.transform = `translate3d(${scrollProgress * maxTravel}px, 0, 0)`;
+        oteteKart.style.transform = `scaleX(${scrollDirection})`;
+        kartPositionUpdatePending = false;
+    }
+
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY !== previousScrollY) {
+            scrollDirection = currentScrollY > previousScrollY ? 1 : -1;
+            previousScrollY = currentScrollY;
+        }
+
+        if (!kartPositionUpdatePending) {
+            kartPositionUpdatePending = true;
+            window.requestAnimationFrame(updateKartPosition);
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", updateKartPosition);
+    updateKartPosition();
+
     const scrollButton = document.getElementById("scrollToTop");
     function toggleScrollTop() {
         if (window.scrollY > 100) {
